@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt Manager</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Prompt Manager</h1>
+            <div class="header-actions">
+                <input type="text" class="search-bar" placeholder="Search prompts...">
+                <button class="add-btn">+</button>
+            </div>
+        </header>
+        <div class="category-tabs">
+            <button class="tab active" data-category="all">All</button>
+            <button class="tab" data-category="writing">Writing</button>
+            <button class="tab" data-category="development">Development</button>
+            <button class="tab" data-category="design">Design</button>
+        </div>
+        <div class="main-content">
+            <div class="sort-options">
+                <select class="sort-select">
+                    <option value="date">Date</option>
+                    <option value="alpha">Alphabetical</option>
+                    <option value="freq">Frequency</option>
+                </select>
+            </div>
+            <div class="prompts-container" draggable="true"></div>
+        </div>
+    </div>
+
+    <div id="manage-modal" class="modal">
+        <div class="modal-content">
+            <h2>Edit Prompt</h2>
+            <div class="modal-form">
+                <label for="prompt-title">Title:</label>
+                <input type="text" id="prompt-title" placeholder="Enter prompt title">
+                <label for="prompt-content">Content:</label>
+                <textarea id="prompt-content" placeholder="Enter prompt content"></textarea>
+                <div class="char-count">0 characters</div>
+                <label for="category-select">Category:</label>
+                <select id="category-select">
+                    <option value="writing">Writing</option>
+                    <option value="development">Development</option>
+                    <option value="design">Design</option>
+                </select>
+                <div class="modal-actions">
+                    <button id="save-prompt" class="modal-btn">Save</button>
+                    <button id="cancel-modal" class="modal-btn">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="notification" class="notification"></div>
+    <script src="script.js"></script>
+</body>
+</html>
